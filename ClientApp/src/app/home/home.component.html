@@ -1,0 +1,22 @@
+<div>
+  <h2 class="title">
+    HQWeb
+  </h2>
+  <!--<div *ngFor="let image of img ">
+    <img [src]="image"/>
+  </div>-->
+  <button type="button" class="btn btn-outline-dark" [routerLink]="['/injustice']">injustice</button>
+  <button type="button" class="btn btn-outline-dark" [routerLink]="['/theflash']">The Flash</button>
+  <button type="button" class="btn btn-outline-dark" [routerLink]="['/batman']">Batman</button>
+
+  <div>
+    <input class="form-control" type="text" placeholder="Nome da HQ" width="50px" name="search" [(ngModel)]="search">
+    <button type="button" class="btn btn-outline-dark" (click)="Procurar()"> Procurar </button>
+  </div>
+
+  <div>
+   <img ng-src ="./Capa/Batman 1.png"/> 
+  </div>
+
+</div>
+

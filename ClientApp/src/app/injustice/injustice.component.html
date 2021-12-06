@@ -1,0 +1,56 @@
+<div class="barmain">
+  <nav>
+    <ul>
+      <li> <a [routerLink]="['/']"> Inicio </a> </li>
+      <li> <a href=""> Lista </a></li>
+    </ul>
+    <input class="form-control" type="text" placeholder="Nome da HQ" name="Bucar por ..." [(ngModel)]="search">
+    <img class="iconsearch" src="assets/icons/lupa.svg" />
+  </nav>
+</div>
+
+<div class="container-control">
+
+  <div class="capaHq">
+    <img class="capa" src="assets/capas/injustice.jpg" />
+  </div>
+
+  <div class="descricao">
+    <section>
+      <h1> Injustice - Gods Among Us - Ano 1 </h1>
+      <p>
+        Injustiça - Deuses Entre nós Depois que o Coringa destrói Metrópolis com uma arma nuclear,
+        enganando Superman, que acreditava que estava a lutar contra Apocalypse e assim acabou matando Lois Lane
+        e o seu filho não nascido, Superman assassina o Coringa diante de Batman e estabelece uma nova ordem
+        mundial. A batalha prossegue entre as forças do Regime do Superman e os aliados da Rebelião de Batman.
+        A Rebelião descobre que existe um universo alternativo onde o plano do Coringa não teve sucesso e
+        transporta vários dos seus super-heróis para o deles, a fim de ajudá-los a derrotar o Regime.
+        O que virá a seguir, confira em Injustice Amoung Us.
+      </p>
+    </section>
+
+    <div class="publisher">
+      <div class="label"> Editora </div>
+      <a href="">DC Comics</a>
+    </div>
+
+    <div class="status">
+      <div class="label">Status</div>
+      Concluído
+    </div>
+
+  </div>
+
+</div>
+
+<div class="capitulos">
+  <h3 class="title"> Capítulos </h3>
+</div>
+
+
+
+<!--<button class="btn btn-primary" (click)="incrementCounter()">Injutice</button>
+<button type="button" class="btn btn-outline-dark" [routerLink]="['/']">Home</button>
+<div *ngFor="let image of img ">
+  <img [src]="image" />
+</div>-->

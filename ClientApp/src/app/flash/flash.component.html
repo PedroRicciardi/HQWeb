@@ -1,0 +1,7 @@
+<div>
+  <button type="button" class="btn btn-outline-dark" (click)="TheFlash()">The Flash</button>
+  <button type="button" class="btn btn-outline-dark" [routerLink]="['/']">Home</button>
+</div>
+<div *ngFor="let image of img ">
+  <img [src]="image" />
+</div>

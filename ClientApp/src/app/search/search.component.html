@@ -1,0 +1,7 @@
+<div>
+    <input class="form-control" type="text" placeholder="Nome da HQ" width="50px" name="search" [(ngModel)]="search">
+    <button type="button" class="btn btn-outline-dark" (click)="Procurar()"> Procurar </button>
+    <div *ngFor="let image of img ">
+        <img [src]="image" />
+    </div>
+</div>

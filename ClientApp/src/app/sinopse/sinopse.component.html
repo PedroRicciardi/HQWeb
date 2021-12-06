@@ -1,0 +1,50 @@
+<div class="barmain">
+  <nav>
+    <ul>
+      <li> <a [routerLink]="['/']"> Inicio </a> </li>
+      <li> <a href=""> Lista </a></li>
+    </ul>
+    <input class="form-control" type="text" placeholder="Nome da HQ" name="Bucar por ..." [(ngModel)]="search">
+    <img class="iconsearch" src="assets/icons/lupa.svg" />
+  </nav>
+</div>
+
+<div class="container-control">
+
+  <div class="capaHq">
+    <img class="capa" [src]="" />  <!-- add variavel -->
+  </div>
+
+  <div class="descricao">
+    <section>
+      <h1> {{title}} </h1> <!-- add variavel -->
+      <p>
+             {{description}}      <!-- add variavel -->
+      </p>
+    </section>
+
+    <div class="publisher">
+      <div class="label"> Editora </div>
+      <a href=""> {{publisher}} </a> <!-- add variavel -->
+    </div>
+
+    <div class="status">
+      <div class="label">Status</div>
+         {{status}}         <!-- add variavel -->
+    </div>
+
+  </div>
+
+</div>
+
+<div class="capitulos">
+  <h3 class="title"> Capítulos </h3>
+</div>
+
+
+
+<!--<button class="btn btn-primary" (click)="incrementCounter()">Injutice</button>
+<button type="button" class="btn btn-outline-dark" [routerLink]="['/']">Home</button>
+<div *ngFor="let image of img ">
+  <img [src]="image" />
+</div>-->
