@@ -7,12 +7,30 @@ using System.Threading.Tasks;
 
 namespace HQWeb.Controllers
 {
+    [Route("[controller]")]  
     public class SinopseController : Controller
     {
         [Route("{name}")]
-        public IEnumerable<Sinopse> GetSinopse(int customerId) 
-        { 
-            // enviar dados para service.
-        }
+        [HttpGet]
+        public ActionResult<Sinopse> GetSinopse(string name) 
+        {
+            Provisorio provisorio = new Provisorio();
+
+            switch (name)
+            {
+                case "flash":
+                    return provisorio.Theflash();
+
+                case "batman":
+                    return provisorio.Batman();
+
+                case "injustice":
+                    return provisorio.Injustice();
+
+                default:
+                    return BadRequest();
+            }
+        }   
+
     }
 }

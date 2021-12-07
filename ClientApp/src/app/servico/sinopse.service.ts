@@ -17,7 +17,7 @@ import { ISinopse } from "../interface/ISinopse";
 
   public obtersinopse(name: string): Observable<ISinopse> {
     console.log(name)
-    return this.http.get<ISinopse>(this._baseUrl + "api/" + name);
+    return this.http.get<ISinopse>(this._baseUrl + "sinopse/" + name);
   }
 
   ngOnInit(): void { }
