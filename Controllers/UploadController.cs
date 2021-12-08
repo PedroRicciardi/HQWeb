@@ -1,5 +1,6 @@
 ﻿using HQWeb.Models;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -19,32 +20,27 @@ namespace HQWeb.Controllers
         }
 
         [HttpPost]
-        public async Task<string> Post([FromForm] FileUpload fileUpload)
+        public void Post( ICollection<IFormFile> files)
         {
             try
             {
-                if(fileUpload.files.Length > 0)
+                foreach (var file in files)
                 {
-                    string path = _webHostEnvironment.WebRootPath + "\\uploads\\";
-                    if (!Directory.Exists(path))
+                    if (file.Length > 0)
                     {
-                        Directory.CreateDirectory(path);
+                        using (var ms = new MemoryStream())
+                        {
+                            file.CopyTo(ms);
+                            var fileBytes = ms.ToArray();
+                            string s = Convert.ToBase64String(fileBytes);
+                            
+                        }
                     }
-                    using (FileStream fileStream = System.IO.File.Create(path + fileUpload.files.FileName))
-                    {
-                        fileUpload.files.CopyTo(fileStream);
-                        fileStream.Flush();
-                        return "Upload feito";
-                    }
-                }
-                else
-                {
-                    return "Falhou";
                 }
             }
             catch (Exception ex)
             {
-                return ex.Message;
+                //return ex.Message;
             }
         }
     }
