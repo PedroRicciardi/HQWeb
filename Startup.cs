@@ -1,14 +1,10 @@
+using HQWeb.Repositorio.Contexto;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.OpenApi.Models;
-using System;
-using System.IO;
-using System.Reflection;
 
 namespace FrontHQWeb
 {
@@ -25,7 +21,7 @@ namespace FrontHQWeb
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddEntityFrameworkNpgsql()
-            .AddDbContext<>(options => 
+            .AddDbContext<HQWebContext>(options =>
             options.UseNpgsql(Configuration.GetConnectionString("ConnectionString")));
 
             services.AddSwaggerGen(c =>
