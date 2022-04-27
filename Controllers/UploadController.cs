@@ -38,7 +38,7 @@ namespace HQWeb.Controllers
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 //return ex.Message;
             }
